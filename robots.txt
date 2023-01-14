@@ -1,0 +1,4 @@
+Sitemap: https://miroallard.com/sitemap.xml
+
+User-agent: *
+Disallow:

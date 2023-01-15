@@ -1,20 +1,21 @@
 ---
 layout: base
 title: Under konstruktion
-pagination:
-  data: collections.posts
-  size: 2
-  alias: posts
+templateEngineOverride: njk,md
 ---
 
 Denna sida kommer så småningom vara mer intressant…
 
-## Alla inlägg hitils
+## Alla inlägg hittills
 
 {%- for post in collections.posts %}
 - [{{ post.data.title }}]({{ post.url }})
-    {%- endfor %}
+{%- endfor %}
 
-{% if pagination.href.previous %}
-  <a href="{{pagination.href.next}}">Nästa sida</a>
-{% endif %}
+## Artiklar
+
+<ul>
+{% for article in collections.articles %}
+<li><a href="{{ article.url }}">{{ article.data.title }}</li>
+{% endfor %}
+</ul>
